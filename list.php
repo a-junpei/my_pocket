@@ -54,7 +54,7 @@ $json = json_decode($body, true);
 
 <?php foreach($json['list'] as $value) { ?>
   <li>
-    <a href="<?php echo $value['resolved_url']; ?>" target="_blank"><?php echo $value['resolved_title']; ?></a>
+    <a href="<?php echo $value['resolved_url']; ?>" target="_blank"><?php echo $value['resolved_title'] ? $value['resolved_title'] : $value['given_title']; ?></a>
     <a href="/action.php?action=archive&item_id=<?php echo $value['item_id']; ?>&page=<?php echo $page; ?>">[アーカイブ]</a>
   </li>
 <?php } ?>
