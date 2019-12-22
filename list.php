@@ -52,12 +52,26 @@ $json = json_decode($body, true);
 // var_dump($json);
 ?>
 
-<?php foreach($json['list'] as $value) { ?>
-  <li>
-    <a href="<?php echo $value['resolved_url']; ?>" target="_blank"><?php echo $value['resolved_title'] ? $value['resolved_title'] : $value['given_title']; ?></a>
-    <a href="/action.php?action=archive&item_id=<?php echo $value['item_id']; ?>&page=<?php echo $page; ?>">[アーカイブ]</a>
-  </li>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+<table class="u-full-width">
+<tbody>
+<?php foreach($json['list'] as $value) {
+  $url = $value['resolved_url'] ? $value['resolved_url'] : $value['given_url'];
+  $title = $value['resolved_title'] ? $value['resolved_title'] : $value['given_title'];
+?>
+  <tr>
+    <td>
+      <a href="<?php echo $url; ?>" target="_blank"><?php echo $title; ?></a>
+    </td>
+    <td>
+      <a href="/action.php?action=archive&item_id=<?php echo $value['item_id']; ?>&page=<?php echo $page; ?>">[アーカイブ]</a>
+    </td>
+  </tr>
 <?php } ?>
+</tbody>
+</table>
+
 <br>
 <a href="/list.php?page=1">[1]</a>
 <a href="/list.php?page=2">[2]</a>
