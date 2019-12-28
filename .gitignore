@@ -1,1 +1,3 @@
 .env
+vendor
+templates_c/*.php
