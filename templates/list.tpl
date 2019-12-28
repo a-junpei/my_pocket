@@ -19,11 +19,13 @@
 <br>
 
 <div class="u-full-width">
-<a href="/list.php?page=1">[1]</a>
-<a href="/list.php?page=2">[2]</a>
-<a href="/list.php?page=3">[3]</a>
-<a href="/list.php?page=4">[4]</a>
-<a href="/list.php?page=5">[5]</a>
+{for $i=1 to 10}
+  {if $i == $page}
+    [{$i}]
+  {else}
+    <a href="/list.php?page={$i}">[{$i}]</a>
+  {/if}
+{/for}
 </div>
 
 </div>

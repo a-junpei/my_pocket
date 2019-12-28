@@ -19,11 +19,10 @@ if ($_COOKIE["token"]) {
 }
 
 $page = $_GET['page'];
-if ($page > 0) {
-  $offset = ($page - 1) * 10;
-} else {
-  $offset = 0;
+if (!$page) {
+  $page = 1;
 }
+$offset = ($page - 1) * 10;
 
 $url = 'https://getpocket.com/v3/get';
 $content = http_build_query([
