@@ -47,7 +47,7 @@ $json = json_decode($body, true);
 
 if ($json['status']) {
     // echo 'OK';
-    header('Location: /list.php?page=' . $page);
+    header('Location: ./list.php?page=' . $page);
     exit;
 } else {
     echo 'NG';

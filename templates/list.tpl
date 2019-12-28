@@ -10,7 +10,7 @@
       <a href="{$value.url}" target="_blank">{$value.title}</a>
     </td>
     <td>
-      <a href="/action.php?action=archive&item_id={$value.item_id}&page={$page}">[アーカイブ]</a>
+      <a href="./action.php?action=archive&item_id={$value.item_id}&page={$page}">[アーカイブ]</a>
     </td>
   </tr>
 {/foreach}
@@ -23,7 +23,7 @@
   {if $i == $page}
     [{$i}]
   {else}
-    <a href="/list.php?page={$i}">[{$i}]</a>
+    <a href="./list.php?page={$i}">[{$i}]</a>
   {/if}
 {/for}
 </div>
