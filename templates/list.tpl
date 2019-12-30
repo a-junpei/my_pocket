@@ -1,8 +1,15 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  </head>
 
-<div class="container">
+<body>
 
-<table class="u-full-width">
+<div class="content">
+<table class="table is-striped">
 <tbody>
 {foreach $list as $value}
   <tr>
@@ -16,16 +23,21 @@
 {/foreach}
 </tbody>
 </table>
+</div>
 <br>
 
-<div class="u-full-width">
-{for $i=1 to 10}
-  {if $i == $page}
-    [{$i}]
-  {else}
-    <a href="./list.php?page={$i}">[{$i}]</a>
-  {/if}
-{/for}
-</div>
+<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+  <ul class="pagination-list">
+    {for $i=1 to 10}
+      <li>
+      {if $i == $page}
+        <a class="pagination-link is-current" href="#">{$i}</a>
+      {else}
+        <a class="pagination-link" href="./list.php?page={$i}">{$i}</a>
+      {/if}
+      </li>
+    {/for}
+  </ul>
+</nav>
 
-</div>
+</body>
