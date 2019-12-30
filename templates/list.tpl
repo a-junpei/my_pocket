@@ -27,6 +27,8 @@
 <br>
 
 <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+  <a class="pagination-previous" href="./list.php?order=oldest">↑</a>
+  <a class="pagination-next" href="./list.php?order=newest">↓</a>
   <ul class="pagination-list">
     {for $i=1 to 10}
       <li>

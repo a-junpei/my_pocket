@@ -27,6 +27,11 @@ if (!$page) {
 }
 $offset = ($page - 1) * 10;
 
+$order = $_GET['order'];
+if ($order !== 'oldest') {
+  $order = 'newest';
+}
+
 $url = 'https://getpocket.com/v3/get';
 $content = http_build_query([
     'consumer_key' => $consumer_key,
@@ -34,7 +39,7 @@ $content = http_build_query([
     'state' => 'unread',
     'count' => 10,
     'offset' => $offset,
-    'sort' => 'newest',
+    'sort' => $order,
     'detailType' => 'complete',
     ]);
 $opts = array(
