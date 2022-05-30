@@ -1,0 +1,12 @@
+# ignore all
+*
+
+# upload list
+!.env
+!.htp
+!.htaccess
+!Dockerfile
+!*.php
+!templates/**
+!templates_c/**
+!vendor/**
