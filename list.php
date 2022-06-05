@@ -4,7 +4,7 @@
 // ini_set('error_reporting', E_ALL);
 
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . "/.env";
+require __DIR__ . "/.env.php";
 
 if ($_COOKIE["token"]) {
   $access_token = $_COOKIE["token"];
