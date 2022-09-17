@@ -1,7 +1,5 @@
 <?php
 
-require __DIR__ . "/.env.php";
-
 	// 設定項目
 	$redirect_uri = ( !isset($_SERVER['HTTPS']) || empty($_SERVER['HTTPS']) ? 'http://' : 'https://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ;		// このプログラムを設置するURL
  

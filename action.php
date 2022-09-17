@@ -1,7 +1,5 @@
 <?php
 
-require __DIR__ . "/.env.php";
-
 if ($_COOKIE["token"]) {
     $access_token = $_COOKIE["token"];
 } else {
