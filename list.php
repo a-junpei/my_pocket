@@ -26,7 +26,7 @@ if ($order !== 'oldest') {
 
 $url = 'https://getpocket.com/v3/get';
 $content = http_build_query([
-    'consumer_key' => $_ENV['CONSUMER_KEY'],
+    'consumer_key' => $consumer_key,
     'access_token' => $access_token,
     'state' => 'unread',
     'count' => 10,
