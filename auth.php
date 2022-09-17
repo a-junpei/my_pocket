@@ -68,7 +68,7 @@ require __DIR__ . "/.env.php";
 
 			$url = 'https://getpocket.com/v3/oauth/authorize';
 			$data = array(
-				'consumer_key' => $consumer_key ,
+				'consumer_key' => $_ENV['CONSUMER_KEY'] ,
 				'code' => $_SESSION['code'] ,
 			);
 			$content = http_build_query($data);
@@ -187,7 +187,7 @@ require __DIR__ . "/.env.php";
 
 		$url = 'https://getpocket.com/v3/oauth/request';
 		$data = array(
-			'consumer_key' => $consumer_key ,
+			'consumer_key' => $_ENV['CONSUMER_KEY'] ,
 			'redirect_uri' => $redirect_uri ,
 			'state' => $state ,
 		);

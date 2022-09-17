@@ -15,7 +15,7 @@ $page = $_GET['page'];
 
 $url = 'https://getpocket.com/v3/send';
 $content = http_build_query([
-    'consumer_key' => $consumer_key,
+    'consumer_key' => $_ENV['CONSUMER_KEY'],
     'access_token' => $access_token,
     'actions' => json_encode([
         [
