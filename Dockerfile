@@ -9,6 +9,7 @@ COPY --from=composer /var/www/html .
 # Copy in custom code from the host machine.
 WORKDIR /var/www/html
 COPY . ./
+RUN chmod 777 templates_c
 
 # Use the PORT environment variable in Apache configuration files.
 # https://cloud.google.com/run/docs/reference/container-contract#port
