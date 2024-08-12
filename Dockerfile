@@ -3,7 +3,7 @@ WORKDIR /var/www/html
 COPY composer.* ./
 RUN composer install
 
-FROM php:8.2-apache
+FROM php:8.3-apache
 COPY --from=composer /var/www/html .
 
 # Copy in custom code from the host machine.
